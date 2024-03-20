@@ -1,0 +1,42 @@
+file(REMOVE_RECURSE
+  "/home/samuel/ros101/devel/include/gazebo_msgs/ApplyBodyWrench.h"
+  "/home/samuel/ros101/devel/include/gazebo_msgs/ApplyJointEffort.h"
+  "/home/samuel/ros101/devel/include/gazebo_msgs/BodyRequest.h"
+  "/home/samuel/ros101/devel/include/gazebo_msgs/ContactState.h"
+  "/home/samuel/ros101/devel/include/gazebo_msgs/ContactsState.h"
+  "/home/samuel/ros101/devel/include/gazebo_msgs/DeleteLight.h"
+  "/home/samuel/ros101/devel/include/gazebo_msgs/DeleteModel.h"
+  "/home/samuel/ros101/devel/include/gazebo_msgs/GetJointProperties.h"
+  "/home/samuel/ros101/devel/include/gazebo_msgs/GetLightProperties.h"
+  "/home/samuel/ros101/devel/include/gazebo_msgs/GetLinkProperties.h"
+  "/home/samuel/ros101/devel/include/gazebo_msgs/GetLinkState.h"
+  "/home/samuel/ros101/devel/include/gazebo_msgs/GetModelProperties.h"
+  "/home/samuel/ros101/devel/include/gazebo_msgs/GetModelState.h"
+  "/home/samuel/ros101/devel/include/gazebo_msgs/GetPhysicsProperties.h"
+  "/home/samuel/ros101/devel/include/gazebo_msgs/GetWorldProperties.h"
+  "/home/samuel/ros101/devel/include/gazebo_msgs/JointRequest.h"
+  "/home/samuel/ros101/devel/include/gazebo_msgs/LinkState.h"
+  "/home/samuel/ros101/devel/include/gazebo_msgs/LinkStates.h"
+  "/home/samuel/ros101/devel/include/gazebo_msgs/ModelState.h"
+  "/home/samuel/ros101/devel/include/gazebo_msgs/ModelStates.h"
+  "/home/samuel/ros101/devel/include/gazebo_msgs/ODEJointProperties.h"
+  "/home/samuel/ros101/devel/include/gazebo_msgs/ODEPhysics.h"
+  "/home/samuel/ros101/devel/include/gazebo_msgs/PerformanceMetrics.h"
+  "/home/samuel/ros101/devel/include/gazebo_msgs/SensorPerformanceMetric.h"
+  "/home/samuel/ros101/devel/include/gazebo_msgs/SetJointProperties.h"
+  "/home/samuel/ros101/devel/include/gazebo_msgs/SetJointTrajectory.h"
+  "/home/samuel/ros101/devel/include/gazebo_msgs/SetLightProperties.h"
+  "/home/samuel/ros101/devel/include/gazebo_msgs/SetLinkProperties.h"
+  "/home/samuel/ros101/devel/include/gazebo_msgs/SetLinkState.h"
+  "/home/samuel/ros101/devel/include/gazebo_msgs/SetModelConfiguration.h"
+  "/home/samuel/ros101/devel/include/gazebo_msgs/SetModelState.h"
+  "/home/samuel/ros101/devel/include/gazebo_msgs/SetPhysicsProperties.h"
+  "/home/samuel/ros101/devel/include/gazebo_msgs/SpawnModel.h"
+  "/home/samuel/ros101/devel/include/gazebo_msgs/WorldState.h"
+  "CMakeFiles/gazebo_msgs_generate_messages_cpp"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang )
+  include(CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

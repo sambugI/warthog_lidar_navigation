@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<launch>
+
+    <!-- Configuration of Warthog which you would like to simulate.
+       See warthog_description for details. -->
+  <!--  <arg name="config" default="base" />
+  <arg name="x" default="0" />
+  <arg name="y" default="0" />
+  <arg name="z" default="1" />
+  <arg name="yaw" default="0" /> -->
+
+  <!-- Load Warthog's description, controllers, and teleop nodes. 
+  <include file="$(find warthog_description)/launch/description.launch">
+    <arg name="config" value="$(arg config)" />
+  </include> -->
+  <!-- joint_state_publisher is needed to pushish the suspension joints.
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  <include file="$(find warthog_control)/launch/control.launch" />
+  <include file="$(find warthog_control)/launch/teleop.launch">
+    <arg name="enable_joy" value="1" />
+  </include> -->
+    <include file="$(find warthog_gazebo)/launch/warthog_world.launch" />
+
+    <arg name="map_file"  default="$(find warthog_personalizado)/maps.yaml"/>
+    <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+    <!-- AMCL --> 
+    <arg name="scan_topic" default="/scan" />
+    <node pkg="amcl" type="amcl" name="amcl">
+        <rosparam file="$(find sim_env)/config/amcl_params.yaml" command="load" />
+        <param name="initial_pose_x" value="0.0" />
+        <param name="initial_pose_y" value="0.0" />
+        <param name="initial_pose_z" value="0.0" />
+        <remap from="/scan" to="$(arg scan_topic)"/>
+        <remap from="static_map" to="/static_map" />
+    </node>
+
+    <!-- MoveBase-->
+    <include file="$(find sim_env)/launch/include/navigation/move_base.launch.xml">
+        <arg name="robot" value="turtlebot3_waffle" />
+        <arg name="global_planner" value="a_star" />
+        <arg name="local_planner" value="apf" />
+    </include>
+
+    <!-- Rviz-->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find sim_env)/rviz/sim_env.rviz" />
+</launch>

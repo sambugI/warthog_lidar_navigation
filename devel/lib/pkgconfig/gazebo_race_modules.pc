@@ -1,0 +1,8 @@
+prefix=/home/samuel/ros101/devel
+
+Name: gazebo_race_modules
+Description: Description of gazebo_race_modules
+Version: 0.2.8
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

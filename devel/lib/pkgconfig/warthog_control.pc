@@ -1,0 +1,8 @@
+prefix=/home/samuel/ros101/devel
+
+Name: warthog_control
+Description: Description of warthog_control
+Version: 0.1.8
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

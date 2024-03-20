@@ -1,0 +1,28 @@
+<!-- Este archivo se encarga de correr el nodo de gmapping para crear el mapa con la odometría y la información del LIDAR. Además, contiene los parámetros--> 
+<!-- que se usan para realizar el mapeo (estos varían de acuerdo con el mapa que se quiera crear)- -->
+<!-- El código contiene comentarios de algunos parámetros que pueden ser confusos y de los valores Default para que empiezen a probar con estos. -->
+ <launch>
+    <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping">
+      <rosparam>          <!-- mapa duckietown: 1,90 m x 3,05 m-->
+        maxUrange: 12       <!-- rango LIDAR detectar obstáculos-->
+        base_frame: base_link
+        map_update_interval: 0.15   <!-- Default: 5.0--> 
+        minimumScore: 650     <!-- poner mas de 600 que tan bueno es el escaneo laser-->
+        linearUpdate: 0.1       <!-- Default: 1.0-->
+        angularUpdate: 0.218    <!-- Default: 0.5-->
+        temporalUpdate: 0.3     
+        xmin: -12
+        ymin: -12
+        xmax: 12
+        ymax: 12 
+        maxRange: 12          <!-- rango LIDAR crear mapa-->
+        particles: 30       <!-- default: 30 y afecta poder computacional-->
+        iterations: 10       <!-- default: 5 y afecta poder computacional-->
+        srr: 0.01            <!-- default: 0.1  y error en la estimación de la distancia cuando el robot se mueve en línea recta-->   
+        srt: 0.02            <!-- default: 0.2  y error en la estimación de la distancia cuando el robot gira sobre su eje (rotación).-->
+        str: 0.01            <!-- default: 0.1 y error se espera en la estimación del ángulo de giro del robot cuando se desplaza en línea recta.-->
+        stt: 0.02            <!-- default: 0.2  y error se espera en la estimación del ángulo de giro cuando el robot gira sobre su eje-->
+        delta: 0.05          <!-- resolución mapa (in metres per occupancy grid block)  y default: 0.05-->
+      </rosparam> 
+    </node>
+  </launch>
