@@ -43,6 +43,7 @@ Para poder navegar de manera autónoma por el ambiente, primero se debe realizar
 Para realizar la navegación warthog solo es necesario hacer el export del modelo del warthog y lanzar el comando de navegación roslaunch warthog_personalizado navigation.launch. Para indicar lugar al que se quiere llevar al robot, se debe usar flecha 2D nav goal de rviz.
 
 ## Referencias
+El principal paquete usado para crear la navegación del robot corresponde a: https://github.com/ai-winter/ros_motion_planning. Se recomienda leer instructivo del paquete para tener una mayor comprensión de cómo poder sacar el máximo potencial a los distintos métodos de navegación que se pueden usar en warthog. 
 Para investigar a mayor profundidad el funcionamiento de los paquetes usados para realizar este proyecto, se sugiere la lectura de las siguientes referencias:
 - https://www.clearpathrobotics.com/assets/guides/noetic/warthog/Simulating.html
 - https://www.clearpathrobotics.com/assets/guides/noetic/warthog/AdditionalSimulation.html#customizepayload
