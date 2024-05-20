@@ -1,5 +1,11 @@
 # Navegación con LIDAR Warthog
-Este proyecto se realizó en ROS Noetic. En el repositorio se incluyen todos los paquetes que se requirieron para hacer el proyecto. A continuación, se incluyen los principales comandos del proyecto:
+
+Este proyecto se realizó en ROS Noetic. En el repositorio se incluyen todos los paquetes que se requirieron para hacer el proyecto. Se deben isntalar los siguientes paquetes:
+- https://github.com/warthog-cpr/warthog.git.
+- https://github.com/warthog-cpr/warthog_simulator.git
+- https://github.com/warthog-cpr/warthog_desktop.git
+- 
+A continuación, se incluyen los principales comandos del proyecto:
 - Lanzar mundo warthog:
 ```
 roslaunch warthog_gazebo warthog_world.launch
