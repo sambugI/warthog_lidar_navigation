@@ -40,7 +40,9 @@ roslaunch warthog_personalizado navigation.launch
 Para poder navegar de manera autónoma por el ambiente, primero se debe realizar el escaneo del ambiente en el cual se va a usar. Para esto, se debe lanzar mundo warthog en una terminal, luego lanzar el modelo personalizado del robot en rviz en otra terminal y finalmente lanzar gmapping. Se controla por medio de rviz el movimiento del robot manualmente. Después, se guarda el mapa con el comando map-saver.
 
 ## Uso de navegación warthog
-Para realizar la navegación warthog solo es necesario hacer el export del modelo del warthog y lanzar el comando de navegación roslaunch warthog_personalizado navigation.launch. Para indicar lugar al que se quiere llevar al robot, se debe usar flecha 2D nav goal de rviz.
+Para realizar la navegación warthog solo es necesario hacer el export del modelo del warthog y lanzar el comando de navegación roslaunch warthog_personalizado navigation.launch. 
+
+Para indicar lugar al que se quiere llevar al robot, se debe usar flecha 2D nav goal de rviz.
 
 ## Referencias
 El principal paquete usado para crear la navegación del robot corresponde a: https://github.com/ai-winter/ros_motion_planning. Se recomienda leer instructivo del paquete para tener una mayor comprensión de cómo poder sacar el máximo potencial a los distintos métodos de navegación que se pueden usar en warthog. 
