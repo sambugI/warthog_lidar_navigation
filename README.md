@@ -32,7 +32,8 @@ rosrun map_server map_saver -f /home/samuel/ros101/src/warthog_personalizado/map
 ```
 Se sugiere modificar dirección a carpeta en que se quiera guardar el mapa.
 - Lanzar navegación warthog:
-```roslaunch warthog_personalizado navigation.launch
+```
+roslaunch warthog_personalizado navigation.launch
 ```
 
 ## Escaneo del ambiente con warthog
