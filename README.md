@@ -1,11 +1,23 @@
 # Navegación con LIDAR Warthog
 
-Este proyecto se realizó en ROS Noetic. En el repositorio se incluyen todos los paquetes que se requirieron para hacer el proyecto. Se deben isntalar los siguientes paquetes:
+Este proyecto se realizó en ROS Noetic. Se deben isntalar los siguientes paquetes:
+
 - https://github.com/warthog-cpr/warthog.git.
 - https://github.com/warthog-cpr/warthog_simulator.git
 - https://github.com/warthog-cpr/warthog_desktop.git
-- 
-A continuación, se incluyen los principales comandos del proyecto:
+- https://github.com/ros-perception/slam_gmapping.git
+- https://github.com/ros-simulation/gazebo_ros_pkgs.git
+- https://github.com/clearpathrobotics/cpr_gazebo.git
+
+Dentro del paquete warthog, debe abrir la carpeta warthog description, luego urdf y finalmente abrir warthog.urdf.xacro. Debe ir a las últimas líneas del programa, en la línea después de Optional standard accessories y poner lo siguiente:
+```
+<xacro:include filename="$(find warthog_description)/urdf/accessories.urdf.xacro" />
+```
+Después de Optional custom includes, debe colocar la siguiente línea:
+```
+<xacro:include filename="$(optenv WARTHOG_URDF_EXTRAS LIDAR.urdf)" />
+```
+Después de esto, se puede usar el paquete con normalidad. A continuación, se incluyen los principales comandos del proyecto:
 - Lanzar mundo warthog:
 ```
 roslaunch warthog_gazebo warthog_world.launch
@@ -41,7 +53,12 @@ Se sugiere modificar dirección a carpeta en que se quiera guardar el mapa.
 ```
 roslaunch warthog_personalizado navigation.launch
 ```
-
+## Navegación en mundo real o en otro ambiente:
+Para lanzar la navegación, se incluyo dentro del archivo navigation.launch la siguiente línea de código:
+```
+<include file="$(find warthog_gazebo)/launch/warthog_world.launch" />
+```
+Esto es debido a que dentro de warthog_world.launch, también se lanza el archivo spawn_warthog.launch, el cual activa los nodos de control y de teleoperación del warthog. Se incluyo el  warthog_world.launch en lugar de estos 2 últimos, para así poder lanzar tanto el simulador como la navegación de manera más simple. Se recomienda cambiar el "include" de navigation.launch considerando la información anterior si se desea probar en ambiente real o en otro ambiente simulado. 
 ## Escaneo del ambiente con warthog
 Para poder navegar de manera autónoma por el ambiente, primero se debe realizar el escaneo del ambiente en el cual se va a usar. Para esto, se debe lanzar mundo warthog en una terminal, luego lanzar el modelo personalizado del robot en rviz en otra terminal y finalmente lanzar gmapping. Se controla por medio de rviz el movimiento del robot manualmente. Después, se guarda el mapa con el comando map-saver.
 
